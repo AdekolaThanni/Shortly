@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply largeDesktop:text-3xl;
+  }
+
+  h1 {
+    @apply text-4xl font-bold text-veryDarkViolet tablet:text-[50px] tablet:leading-[60px] desktop:leading-[90px] desktop:text-[80px] largeDesktop:text-[120px] largeDesktop:leading-[140px];
+  }
+
+  h2 {
+    @apply text-2xl font-bold text-veryDarkViolet desktop:text-3xl largeDesktop:text-6xl;
+  }
+
+  h3 {
+    @apply text-lg font-bold text-veryDarkViolet largeDesktop:text-4xl;
+  }
+
+  p {
+    @apply text-grayishViolet desktop:text-xl largeDesktop:text-3xl;
+  }
+}
+
+.red-border {
+  @apply border-red border-2 placeholder:text-red;
+}
+
+@layer components {
+  .primary-button {
+    @apply bg-cyan rounded-full px-6 py-1 hover:opacity-70 text-white largeDesktop:px-10 largeDesktop:py-4;
+  }
+}
+/* Sections content container */
+.content-container {
+  @apply max-w-[2000px] items-center flex mx-auto px-5 tablet:px-10 largeDesktop:px-32 laptop:px-20;
+}
+
+.menuClosed::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-5px);
+  @apply bg-grayishViolet;
+}
+
+.menuClosed::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: translateY(2px);
+  @apply bg-grayishViolet;
+}
+
+.menuOpened {
+  transform: rotate(40deg);
+}
+
+.menuOpened::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: rotate(100deg);
+  @apply bg-grayishViolet;
+}
+
+.link-copied {
+  @apply bg-darkViolet;
+}
